@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.Instrumentation
 import android.content.Intent
 import android.net.Uri
+import android.os.Parcelable
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -105,7 +106,7 @@ class ProfileActivityIntentTest {
         // Setup the result intent. Needed if is not one of your activities.
         val resultData = Intent()
         val avatar = Avatar(2, R.drawable.bulbasur, "Bulbasur")
-        resultData.putExtra(AvatarActivity.EXTRA_AVATAR, avatar)
+        resultData.putExtra(AvatarActivity.EXTRA_AVATAR, avatar as Parcelable)
         val result = Instrumentation.ActivityResult(
             Activity.RESULT_OK, resultData
         )

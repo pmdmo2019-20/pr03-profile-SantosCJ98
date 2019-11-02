@@ -1,6 +1,7 @@
 package es.iessaladillo.pedrojoya.profile.ui.avatar
 
 import android.content.Intent
+import android.os.Parcelable
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -30,7 +31,7 @@ class AvatarActivityRotationTest {
     fun setup() {
         val avatar = Avatar(1, R.drawable.pikachu, "Pikachu")
         testRule.launchActivity(
-            Intent().putExtra("EXTRA_AVATAR", avatar)
+            Intent().putExtra("EXTRA_AVATAR", avatar as Parcelable)
         )
     }
 

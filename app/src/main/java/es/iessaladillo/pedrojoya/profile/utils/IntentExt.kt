@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import es.iessaladillo.pedrojoya.profile.data.local.entity.Avatar
 
 // Is any activity available to use the intent.
 fun isActivityAvailable(ctx: Context, intent: Intent): Boolean {
@@ -30,4 +31,6 @@ fun newDialIntent(phoneNumber: String): Intent {
 fun newSearchInMapIntent(text: String): Intent {
     return Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$text"))
 }
+
+
 
